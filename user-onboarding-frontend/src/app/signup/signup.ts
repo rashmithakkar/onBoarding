@@ -34,7 +34,7 @@ export class Signup {
 
     // 🔴 API call will be enabled later
     this.http
-      .post('http://localhost:3000/api/signup', {
+      .post('https://onboarding-backend-myvg.onrender.com/api/signup', {
         name: this.name(),
         email: this.email(),
       })

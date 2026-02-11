@@ -69,9 +69,9 @@ app.post("/api/update-status", async (req, res) => {
   const { email, status } = req.body;
 
   try {
-    await User.updateOne({ email }, { onboardingStatus: status });
+    await User.updateOne({ onboardingStatus: status });
 
-    console.log("Status updated:", email, status);
+    console.log("Status updated:", status);
 
     res.json({ message: "Status updated" });
   } catch (error) {
