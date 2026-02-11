@@ -1,0 +1,38 @@
+<h2>Signup</h2>
+
+<input
+  type="text"
+  placeholder="Name"
+  [value]="name()"
+  (input)="name.set($any($event.target).value)"
+/>
+
+<br /><br />
+
+<input
+  type="email"
+  placeholder="Email"
+  [value]="email()"
+  (input)="email.set($any($event.target).value)"
+/>
+
+<br /><br />
+
+<p>
+  Name: {{ name() }} <br />
+  Email: {{ email() }}
+</p>
+
+<button (click)="submit()" [disabled]="loading()">
+  {{ loading() ? 'Submitting...' : 'Sign Up' }}
+</button>
+
+<br /><br />
+
+<p style="color: green" *ngIf="success()">
+  {{ success() }}
+</p>
+
+<p style="color: red" *ngIf="error()">
+  {{ error() }}
+</p>
