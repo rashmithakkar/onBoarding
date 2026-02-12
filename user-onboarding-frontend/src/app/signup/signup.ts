@@ -45,9 +45,10 @@ export class Signup {
           this.name.set('');
           this.email.set('');
         },
-        error: () => {
+        error: (err) => {
           this.loading.set(false);
-          this.error.set('Signup failed');
+          const errorMessage = err?.error?.message || err?.message || 'Signup failed';
+          this.error.set(errorMessage);
         },
       });
   }
